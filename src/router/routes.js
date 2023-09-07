@@ -1,4 +1,9 @@
 const routes = [
+  // {
+  //   path: "/",
+  //   component: () => import("src/pages/common/SetRoles.vue"),
+  // },
+
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),

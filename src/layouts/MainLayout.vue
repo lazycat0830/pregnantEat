@@ -70,7 +70,10 @@
 
 <script setup>
 import { ref } from "vue";
-import nav from "./NavCollection";
+import { useQuasar } from "quasar";
+import PregnantNav from "./PregnantNavCollection";
+import MakerNav from "./MakerNavCollection";
+import AdminNav from "./AdminCollection";
 
 const leftDrawerOpen = ref(false);
 const Account = ref("名字");
@@ -80,5 +83,8 @@ const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };
 
-const navItem = ref(nav);
+const navItem = ref(PregnantNav);
+
+const $q = useQuasar();
+$q.addressbarColor.set("#a2e3fa");
 </script>
