@@ -38,7 +38,7 @@
                 >登入</q-btn
               >
               <q-btn
-                to="Register"
+                to="/RegisterPage"
                 rounded
                 dense
                 color="teal-14"
