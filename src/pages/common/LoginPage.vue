@@ -31,6 +31,7 @@
               "
             >
               <q-btn
+                to="/Page/HeaderPage"
                 rounded
                 dense
                 color="orange-14"
@@ -53,7 +54,7 @@
             <div
               style="width: 100%; text-align: end; text-decoration: underline"
             >
-              <span style="cursor: pointer">忘記密碼</span>
+              <a style="cursor: pointer" href="/ForgetPassword">忘記密碼</a>
             </div>
           </td>
         </tr>
@@ -70,5 +71,10 @@ import HeaderLayout from "./components/HeaderLayout.vue";
   justify-content: center;
   align-items: center;
   padding: 5px 0px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
 </style>

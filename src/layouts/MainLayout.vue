@@ -1,19 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <!-- 上方導覽列 -->
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer()"
-        />
-        <q-toolbar-title><h5>食在好孕</h5></q-toolbar-title>
-      </q-toolbar>
-    </q-header>
 
     <!-- 左側導覽列 -->
     <q-drawer
@@ -24,8 +11,8 @@
     >
       <q-scroll-area
         style="
-          height: calc(100% - 150px);
-          margin-top: 150px;
+          height: calc(100% - 180px);
+          margin-top: 180px;
           border-right: 1px solid #ddd;
         "
       >
@@ -48,11 +35,11 @@
       <q-img
         class="absolute-top"
         src="https://cdn.quasar.dev/img/material.png"
-        style="height: 150px"
+        style="height: 180px"
       >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="public\images\Account\accountimg.png" />
+            <img src="\public\images\Account\accountimg.png" />
           </q-avatar>
           <div class="text-weight-bold">{{ Account }}</div>
           <div>{{ Role }}</div>
@@ -63,7 +50,10 @@
     <!-- 中間主畫面 -->
     <q-page-container>
       <!-- 主要顯示的components -->
-      <router-view />
+      <router-view
+        :leftDrawerOpen="leftDrawerOpen"
+        :toggleLeftDrawer="toggleLeftDrawer"
+      />
     </q-page-container>
   </q-layout>
 </template>
@@ -75,10 +65,10 @@ import PregnantNav from "./PregnantNavCollection";
 import MakerNav from "./MakerNavCollection";
 import AdminNav from "./AdminCollection";
 
-const leftDrawerOpen = ref(false);
 const Account = ref("名字");
 const Role = ref("身分");
 
+const leftDrawerOpen = ref(false);
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };

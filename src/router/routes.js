@@ -1,49 +1,85 @@
+const LoginPage = () => import("src/pages/common/LoginPage.vue");
+const RegisterPage = () => import("src/pages/common/RegisterPage.vue");
+const SetRoles = () => import("src/pages/common/SetRoles.vue");
+const ForgetPassword = () => import("src/pages/common/ForgetPassword.vue");
+const _Layouts = () => import("src/layouts/MainLayout.vue");
+const HeaderPage = () => import("src/pages/pregnant/HeaderPage.vue");
+const PersonalInformation = () =>
+  import("src/pages/pregnant/PersonalInformation.vue");
+const FavoriteRecipe = () => import("src/pages/pregnant/FavoriteRecipe.vue");
+const HistoricalRecord = () =>
+  import("src/pages/pregnant/HistoricalRecord.vue");
+const EditPassword = () => import("src/pages/pregnant/EditPassword.vue");
+const SetUp = () => import("src/pages/pregnant/SetUp.vue");
+const HelpPage = () => import("src/pages/pregnant/HelpPage.vue");
+
 const routes = [
   {
     path: "/",
-    component: () => import("src/pages/common/LoginPage.vue"),
+    component: LoginPage,
   },
   {
     path: "/LoginPage",
-    component: () => import("src/pages/common/LoginPage.vue"),
+    name: "loginpage",
+    component: LoginPage,
   },
   {
     path: "/RegisterPage",
-    component: () => import("src/pages/common/RegisterPage.vue"),
+    name: "registerPage",
+    component: RegisterPage,
   },
-
-  // {
-  //   path: "/",
-  //   name: "pregnantRoot",
-  //   component: () => import("layouts/MainLayout.vue"),
-  //   children: [
-  //     {
-  //       path: "/headerPage",
-  //       component: () => import("pages/pregnant/HeaderPage.vue"),
-  //     },
-  //     {
-  //       path: "/editPassword",
-  //       component: () => import("pages/pregnant/EditPassword.vue"),
-  //     },
-  //     {
-  //       path: "/favoriteRecipe",
-  //       component: () => import("pages/pregnant/FavoriteRecipe.vue"),
-  //     },
-  //     {
-  //       path: "/helpPage",
-  //       component: () => import("pages/pregnant/HelpPage.vue"),
-  //     },
-  //     {
-  //       path: "/historicalRecord",
-  //       component: () => import("pages/pregnant/HistoricalRecord.vue"),
-  //     },
-  //     {
-  //       path: "/personalInformation",
-  //       component: () => import("pages/pregnant/PersonalInformation.vue"),
-  //     },
-  //     { path: "/setUp", component: () => import("pages/pregnant/SetUp.vue") },
-  //   ],
-  // },
+  {
+    path: "/SetRoles",
+    name: "setRoles",
+    component: SetRoles,
+  },
+  {
+    path: "/ForgetPassword",
+    name: "forgetPassword",
+    component: ForgetPassword,
+  },
+  {
+    path: "/Page",
+    name: "page",
+    component: _Layouts,
+    children: [
+      {
+        path: "/Page/HeaderPage",
+        name: "headerPage",
+        component: HeaderPage,
+      },
+      {
+        path: "/Page/PersonalInformation",
+        name: "personalInformation",
+        component: PersonalInformation,
+      },
+      {
+        path: "/Page/FavoriteRecipe",
+        name: "favoriteRecipe",
+        component: FavoriteRecipe,
+      },
+      {
+        path: "/Page/HistoricalRecord",
+        name: "historicalRecord",
+        component: HistoricalRecord,
+      },
+      {
+        path: "/Page/EditPassword",
+        name: "editPassword",
+        component: EditPassword,
+      },
+      {
+        path: "/Page/SetUp",
+        name: "setUp",
+        component: SetUp,
+      },
+      {
+        path: "/Page/HelpPage",
+        name: "helpPage",
+        component: HelpPage,
+      },
+    ],
+  },
 
   // Always leave this as last one,
   // but you can also remove it
