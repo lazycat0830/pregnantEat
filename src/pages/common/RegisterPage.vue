@@ -131,11 +131,12 @@
                 align-items: center;
               "
             >
+              <!-- to="/SetRoles" -->
               <q-btn
-                to="/SetRoles"
                 rounded
                 dense
                 color="orange-14"
+                @click="toolbar = true"
                 style="
                   width: 60%;
                   margin: 5px 0px;
@@ -157,11 +158,29 @@
       </table>
     </div>
   </div>
+  <q-dialog v-model="toolbar">
+    <q-card>
+      <q-toolbar>
+        <q-avatar>
+          <img src="/public/images/logo.jpeg" />
+        </q-avatar>
+
+        <q-toolbar-title
+          ><span class="text-weight-bold">信箱驗證</span>
+        </q-toolbar-title>
+
+        <q-btn flat round dense icon="close" v-close-popup />
+      </q-toolbar>
+
+      <q-card-section> 已發送驗證碼，請到信箱確認，謝謝! </q-card-section>
+    </q-card>
+  </q-dialog>
 </template>
 <script setup>
 import HeaderLayout from "./components/HeaderLayout.vue";
 import { ref } from "vue";
 const isPwd = ref(true);
+const toolbar = ref(false);
 const RegisterObject = ref({
   name: "",
   account: "",

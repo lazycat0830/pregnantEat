@@ -1,11 +1,11 @@
 <template>
   <HeaderLayout :Title="'食在好孕'"></HeaderLayout>
-  <div class="absolute" style="top: 150px; width: 100%; padding: 0px 10%">
+  <div class="absolute" style="top: 150px; width: 100%; padding: 0px 20%">
     <div style="display: flex; justify-content: center; flex-direction: column">
       <div
         style="
           text-align: center;
-          font-size: 18px;
+          font-size: 20px;
           font-weight: bolder;
           margin: 0px 10%;
         "
@@ -14,10 +14,10 @@
       </div>
       <table class="LoginTable">
         <tr>
-          <td><q-input label="帳號："></q-input></td>
+          <td><q-input style="width: 100%" label="帳號："></q-input></td>
         </tr>
         <tr>
-          <td><q-input label="密碼："></q-input></td>
+          <td><q-input style="width: 100%" label="密碼："></q-input></td>
         </tr>
         <tr>
           <td>
@@ -35,7 +35,7 @@
                 rounded
                 dense
                 color="orange-14"
-                style="width: 60%; margin: 5px 0px; padding: 5px 0px"
+                style="width: 100%; margin: 5px 0px; padding: 5px 0px"
                 >登入</q-btn
               >
               <q-btn
@@ -43,7 +43,7 @@
                 rounded
                 dense
                 color="teal-14"
-                style="width: 60%; margin: 5px 0px; padding: 5px 0px"
+                style="width: 100%; margin: 5px 0px; padding: 5px 0px"
                 >註冊</q-btn
               >
             </div>

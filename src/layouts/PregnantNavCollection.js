@@ -39,14 +39,14 @@ const nav = [
     title: "設定",
     icon: "settings",
     color: "blue",
-    url: "/setUp",
+    url: "/Page/setUp",
   },
   {
     id: "HelpPage",
     title: "使用說明",
     icon: "help_outline",
     color: "blue",
-    url: "/helpPage",
+    url: "/Page/helpPage",
   },
   {
     id: "LogOut",
