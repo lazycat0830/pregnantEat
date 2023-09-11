@@ -33,7 +33,7 @@
           </q-chip>
         </div>
       </div>
-      <div class="absolute row justify-center" style="top: 175px; width: 100%">
+      <div class="absolute row justify-center" style="top: 163px; width: 100%">
         <span v-if="changeShow === 'home'" class="body-header-text"
           >推薦食譜</span
         >
@@ -46,6 +46,7 @@
         style="
           margin-top: 20px;
           max-height: 380px;
+
           overflow: hidden;
           overflow-y: scroll;
         "
@@ -65,10 +66,10 @@
             @click="showComponent('home')"
           ></q-icon>
         </div>
-        <div class="footer-body-addbtn">
+        <div class="footer-body-addbtn" @click="dialog = !dialog">
           <q-icon class="btn-icon" name="add"></q-icon>
         </div>
-        <div class="footer-body-btn">
+        <div class="footer-body-btn-click">
           <q-icon
             class="btn-icon"
             name="history"
@@ -78,17 +79,90 @@
       </div>
     </div>
   </div>
+  <q-dialog
+    v-model="dialog"
+    position="bottom"
+    style="border-top-right-radius: 15px; border-top-left-radius: 15px"
+  >
+    <q-card>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          font-size: 18px;
+        "
+      >
+        下訂日期：{{ nowDate }}
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          font-size: 20px;
+          font-weight: bolder;
+        "
+      >
+        請選擇主食
+      </div>
+      <div class="q-pa-md">
+        <div
+          class="row justify-center q-gutter-sm"
+          style="overflow: hidden; max-height: 300px; overflow-y: scroll"
+        >
+          <div
+            v-for="index in inView.length"
+            :key="index"
+            :data-id="index - 1"
+            class="example-item q-pa-sm flex flex-center relative-position"
+            v-intersection="onIntersection"
+          >
+            <transition name="q-transition--scale">
+              <q-card v-if="inView[index - 1]">
+                <img
+                  src="/public/images/food/main/shutterstock_710865547.jpg"
+                />
+
+                <q-card-section>
+                  <div style="display: flex; justify-content: space-between">
+                    <div class="text-h6">主食 #{{ index }}</div>
+                    <div>
+                      <q-btn color="teal-14" @click="toGenerate">確定</q-btn>
+                    </div>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </transition>
+          </div>
+        </div>
+      </div>
+    </q-card>
+  </q-dialog>
 </template>
 
 <script setup>
 import { ref, defineProps, computed, reactive } from "vue";
 import { useRouter } from "vue-router";
-import SwiperCard from "/src/pages/pregnant/components/swiperCard.vue";
+
 import CarouselCard from "./components/CarouselCard.vue";
 import historicalPage from "./components/historicalPage.vue";
 
+const inView = ref(Array.apply(null, Array(10)).map((_) => false));
+const date = new Date();
+const nowDate = ref(
+  date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate()
+);
+const dialog = ref(false);
 const stars = ref(4);
 // const historyValue = reactive(history.state);
+
+const onIntersection = (entry) => {
+  const index = parseInt(entry.target.dataset.id, 10);
+  setTimeout(() => {
+    inView.value.splice(index, 1, entry.isIntersecting);
+  }, 50);
+};
 
 const { leftDrawerOpen, toggleLeftDrawer } = defineProps([
   "leftDrawerOpen",
@@ -105,10 +179,10 @@ const toggleNav = () => {
 };
 
 const desert = reactive({
-  fruit: { cheacked: false, label: "水果", color: "primary" },
-  vegetable: { cheacked: false, label: "蔬菜", color: "teal" },
-  meat: { cheacked: false, label: "肉類", color: "orange" },
-  egg: { cheacked: false, label: "蛋", color: "red" },
+  fruit: { cheacked: false, label: "水果", color: "indigo-5" },
+  vegetable: { cheacked: false, label: "蔬菜", color: "teal-5" },
+  meat: { cheacked: false, label: "肉類", color: "orange-5" },
+  egg: { cheacked: false, label: "蛋", color: "red-5" },
 });
 
 const selection = computed(() => {
@@ -117,14 +191,25 @@ const selection = computed(() => {
     .join(", ");
 });
 
-const changeShow = ref("");
+const changeShow = ref("home");
 const showComponent = (show) => {
   changeShow.value = show;
+};
+
+const toGenerate = () => {
+  router.push({
+    name: "generateProd",
+  });
 };
 </script>
 <style>
 .my-card {
   width: 100%;
   max-width: 300px;
+}
+
+.example-item {
+  height: 290px;
+  width: 290px;
 }
 </style>

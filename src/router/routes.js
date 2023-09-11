@@ -9,6 +9,7 @@ const PersonalInformation = () =>
 const FavoriteRecipe = () => import("src/pages/pregnant/FavoriteRecipe.vue");
 const HistoricalRecord = () =>
   import("src/pages/pregnant/HistoricalRecord.vue");
+const GenerateProd = () => import("src/pages/pregnant/GenerateProd.vue");
 const EditPassword = () => import("src/pages/common/EditPassword.vue");
 const SetUp = () => import("src/pages/pregnant/SetUp.vue");
 const HelpPage = () => import("src/pages/pregnant/HelpPage.vue");
@@ -93,6 +94,11 @@ const routes = [
         path: "/Page/HelpPage",
         name: "helpPage",
         component: HelpPage,
+      },
+      {
+        path: "/Page/GenerateProd",
+        name: "generateProd",
+        component: GenerateProd,
       },
     ],
   },

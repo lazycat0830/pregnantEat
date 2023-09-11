@@ -1,5 +1,5 @@
 <template>
-  <HeaderLayout :Title="'食在好孕'"></HeaderLayout>
+  <HeaderLayout :Title="'食在好孕'" :toPage="'loginpage'"></HeaderLayout>
   <div class="absolute" style="top: 120px; width: 100%; padding: 0px 10%">
     <div style="display: flex; justify-content: center; flex-direction: column">
       <div

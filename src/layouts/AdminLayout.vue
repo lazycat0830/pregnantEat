@@ -34,15 +34,15 @@
 
       <q-img
         class="absolute-top"
-        src="https://cdn.quasar.dev/img/material.png"
+        src="\public\images\layoutsgb\bg2.jpg"
         style="height: 180px"
       >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="\public\images\Account\accountimg.png" />
+            <img src="\public\images\Account\logo.jpeg" />
           </q-avatar>
-          <div class="text-weight-bold">{{ Account }}</div>
-          <div>{{ Role }}</div>
+          <div class="text-weight-bold" style="color: #000">{{ Account }}</div>
+          <div style="color: #000">{{ Role }}</div>
         </div>
       </q-img>
     </q-drawer>

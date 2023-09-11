@@ -4,7 +4,7 @@
     style="
       width: 100%;
       height: 200px;
-      background-color: #ff9924c9;
+      background-color: #fbc2b5;
       color: #fff;
       box-shadow: 0px 4px 3px #8d8d8d;
     "

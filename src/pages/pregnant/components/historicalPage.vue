@@ -16,19 +16,20 @@
         margin: 10px 0px;
       "
     >
-      <q-img
-        no-native-menu
-        style="max-height: 300px"
-        src="https://cdn.quasar.dev/img/parallax2.jpg"
-        ><q-btn
-          class="absolute all-pointer-events"
-          style="top: 10px; right: 10px; font-size: 20px"
-          flat
-          round
-          color="red"
-          icon="favorite"
+      <div
+        style="
+          max-width: 200px;
+          max-height: 200px;
+          width: 100%;
+          margin: 0px auto;
+        "
+        class="row justify-center"
+      >
+        <img
+          style="width: 100%; object-fit: cover; height: 100%"
+          :src="Data.url"
         />
-      </q-img>
+      </div>
 
       <q-card-section style="padding-bottom: 0px">
         <div class="text-overline text-orange-9 row justify-between">
@@ -51,9 +52,21 @@
 import { ref } from "vue";
 
 const DataList = ref([
-  { Title: "食譜名1", Maker: "製作者1" },
-  { Title: "食譜名2", Maker: "製作者2" },
-  { Title: "食譜名3", Maker: "製作者3" },
+  {
+    Title: "番茄蛋拉麵",
+    Maker: "中央廚房",
+    url: "/public/images/food/4/_1ec64a2f-2fe3-4c33-90f5-3ef5003b55c2.jpg",
+  },
+  {
+    Title: "香菇牛肉炒麵",
+    Maker: "中央廚房",
+    url: "/public/images/food/3/_40671623-b8c1-4126-b162-cbdc06906ff0.jpg",
+  },
+  {
+    Title: "便當",
+    Maker: "中央廚房",
+    url: "/public/images/food/2/_87c00327-1aaf-4b9a-a8b7-efb016a1a24e.jpg",
+  },
 ]);
 </script>
 <style>
