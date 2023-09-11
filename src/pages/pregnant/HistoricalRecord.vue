@@ -1,1 +1,1 @@
-<template>HistoricalRecord</template>
+<template>historicalPage</template>

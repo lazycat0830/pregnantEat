@@ -22,7 +22,7 @@
         >
           <q-card
             @click="open(item)"
-            style="width: 300px; border: 1px #000 solid; border-radius: 20px"
+            style="width: 350px; border: 1px #000 solid; border-radius: 20px"
             class="my-card"
             flat
             bordered
@@ -62,12 +62,20 @@
   </div>
   <q-dialog v-model="dialog" position="bottom">
     <q-card
-      style="width: 300px; border: 1px #000 solid; border-radius: 20px"
+      style="
+        width: 100%;
+        border: 1px #000 solid;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      "
       class="my-card"
       flat
       bordered
     >
-      <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+      <div class="row justify-center">
+        <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+        <div style="width: 60%; height: 100%; background-color: #000"></div>
+      </div>
 
       <q-card-section>
         <div class="row no-wrap items-center">

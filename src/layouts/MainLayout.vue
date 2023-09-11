@@ -3,12 +3,7 @@
     <!-- 上方導覽列 -->
 
     <!-- 左側導覽列 -->
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      :width="200"
-      :breakpoint="400"
-    >
+    <q-drawer v-model="leftDrawerOpen" :width="200" :breakpoint="400">
       <q-scroll-area
         style="
           height: calc(100% - 180px);
@@ -42,7 +37,7 @@
             <img src="\public\images\Account\accountimg.png" />
           </q-avatar>
           <div class="text-weight-bold">{{ Account }}</div>
-          <div>{{ Role }}</div>
+          <div>身分：{{ Role }}</div>
         </div>
       </q-img>
     </q-drawer>
@@ -65,8 +60,8 @@ import PregnantNav from "./PregnantNavCollection";
 import MakerNav from "./MakerNavCollection";
 import AdminNav from "./AdminCollection";
 
-const Account = ref("名字");
-const Role = ref("身分");
+const Account = ref("王小姐");
+const Role = ref("孕婦");
 
 const leftDrawerOpen = ref(false);
 const toggleLeftDrawer = () => {

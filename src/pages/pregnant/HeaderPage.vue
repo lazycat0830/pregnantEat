@@ -1,24 +1,6 @@
 <template>
-  <div
-    class="relative"
-    style="
-      width: 100%;
-      height: 160px;
-      background-color: #ff9924c9;
-      color: #fff;
-      box-shadow: 0px 4px 3px #8d8d8d;
-    "
-  >
-    <div
-      class="absolute"
-      style="
-        display: flex;
-        justify-content: left;
-        width: 100%;
-        margin: 5px;
-        padding: 10px;
-      "
-    >
+  <div class="relative header-bg">
+    <div class="absolute header-absolute-style">
       <q-btn
         flat
         @click="toggleNav"
@@ -28,56 +10,17 @@
         style="font-size: 20px"
       />
     </div>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <div
-        style="
-          padding-top: 20px;
-          padding-bottom: 15px;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 30px;
-          font-weight: bolder;
-          text-shadow: 0px 3px 3px #8d8d8d;
-        "
-      >
-        食在好孕
-      </div>
+    <div class="column justify-center items-center">
+      <div class="header-Title-Text">食在好孕</div>
       <div style="width: 80%">
         <q-input bg-color="grey-1" outlined dense rounded placeholder="搜尋">
           <template v-slot:append>
-            <div
-              style="
-                padding: 4px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #ffaf52;
-                border-radius: 100%;
-              "
-            >
+            <div class="header-Search-icon">
               <q-icon class="cursor-pointer" name="search" />
             </div>
           </template>
         </q-input>
-        <div
-          style="
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: scroll;
-          "
-        >
+        <div class="header-change-Search-Keywork">
           <q-chip
             v-for="(val, key) in desert"
             :key="key"
@@ -90,106 +33,46 @@
           </q-chip>
         </div>
       </div>
-      <div
-        class="absolute"
-        style="top: 175px; display: flex; justify-content: center; width: 100%"
-      >
-        <span
-          style="
-            background-color: #4d0000;
-            color: #fff;
-            padding: 3px 20px;
-            z-index: 2;
-            font-size: 18px;
-            border-radius: 20px;
-          "
+      <div class="absolute row justify-center" style="top: 175px; width: 100%">
+        <span v-if="changeShow === 'home'" class="body-header-text"
           >推薦食譜</span
         >
+        <span v-else class="body-header-text">歷史紀錄</span>
       </div>
     </div>
-    <div
-      class="absolute"
-      style="top: 180px; width: 100%; height: 70%; background-color: #ffffff"
-    >
+    <div class="absolute body-bg">
       <div
+        v-if="changeShow === 'history'"
         style="
-          background-color: #ffffff;
-          width: 100%;
+          margin-top: 20px;
+          max-height: 380px;
           overflow: hidden;
-          height: 95%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          overflow-y: scroll;
         "
       >
+        <historicalPage></historicalPage>
+      </div>
+      <div v-else class="CarouselCard-Swiper">
         <CarouselCard></CarouselCard>
       </div>
     </div>
-    <div
-      class="absolute"
-      style="
-        display: flex;
-        justify-content: center;
-        align-items: start;
-        bottom: 0px;
-        width: 100%;
-        height: 60px;
-      "
-    >
-      <div
-        style="
-          width: 80%;
-          height: 45px;
-          background-color: #60d996;
-          border-radius: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin: 0px 20px;
-          padding: 0px 20px;
-          font-size: 30px;
-        "
-      >
-        <div
-          style="
-            padding: 5px;
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ffffff;
-          "
-        >
-          <q-icon style="font-size: 20px; color: #60d996" name="home"></q-icon>
-        </div>
-        <div
-          style="
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            background-color: #ffffff;
-          "
-        >
+    <div class="absolute footer-conetent">
+      <div class="footer-body">
+        <div class="footer-body-btn-click">
           <q-icon
-            style="font-size: 20px; color: #60d996; font-weight: bolder"
-            name="add"
+            class="btn-icon"
+            name="home"
+            @click="showComponent('home')"
           ></q-icon>
         </div>
-        <div
-          style="
-            padding: 5px;
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ffffff;
-          "
-        >
+        <div class="footer-body-addbtn">
+          <q-icon class="btn-icon" name="add"></q-icon>
+        </div>
+        <div class="footer-body-btn">
           <q-icon
-            style="font-size: 20px; color: #60d996"
+            class="btn-icon"
             name="history"
+            @click="showComponent('history')"
           ></q-icon>
         </div>
       </div>
@@ -202,8 +85,10 @@ import { ref, defineProps, computed, reactive } from "vue";
 import { useRouter } from "vue-router";
 import SwiperCard from "/src/pages/pregnant/components/swiperCard.vue";
 import CarouselCard from "./components/CarouselCard.vue";
+import historicalPage from "./components/historicalPage.vue";
 
 const stars = ref(4);
+// const historyValue = reactive(history.state);
 
 const { leftDrawerOpen, toggleLeftDrawer } = defineProps([
   "leftDrawerOpen",
@@ -231,6 +116,11 @@ const selection = computed(() => {
     .filter((type) => desert[type] === true)
     .join(", ");
 });
+
+const changeShow = ref("");
+const showComponent = (show) => {
+  changeShow.value = show;
+};
 </script>
 <style>
 .my-card {

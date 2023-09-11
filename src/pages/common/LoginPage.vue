@@ -14,7 +14,13 @@
       </div>
       <table class="LoginTable">
         <tr>
-          <td><q-input style="width: 100%" label="帳號："></q-input></td>
+          <td>
+            <q-input
+              v-model="AccountValue"
+              style="width: 100%"
+              label="帳號："
+            ></q-input>
+          </td>
         </tr>
         <tr>
           <td><q-input style="width: 100%" label="密碼："></q-input></td>
@@ -30,8 +36,9 @@
                 align-items: center;
               "
             >
+              <!-- to="/Page/HeaderPage" -->
               <q-btn
-                to="/Page/HeaderPage"
+                @click="Login()"
                 rounded
                 dense
                 color="orange-14"
@@ -64,6 +71,39 @@
 </template>
 <script setup>
 import HeaderLayout from "./components/HeaderLayout.vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const AccountValue = ref("");
+
+const router = useRouter();
+const Login = () => {
+  if (AccountValue.value == "admin") {
+    router.push({
+      name: "AdminheaderPage",
+      state: {
+        accountName: "管理員 先生",
+        Roles: "管理員",
+      },
+    });
+  } else if (AccountValue.value == "maker") {
+    router.push({
+      name: "MakerheaderPage",
+      state: {
+        accountName: "中央廚房",
+        Roles: "製作者",
+      },
+    });
+  } else {
+    router.push({
+      name: "headerPage",
+      state: {
+        accountName: "王小姐",
+        Roles: "孕婦",
+      },
+    });
+  }
+};
 </script>
 <style>
 .LoginTable tr td {

@@ -1,0 +1,135 @@
+.header-bg {
+  width: 100%;
+  height: 160px;
+  background-color: #ff9924c9;
+  color: #fff;
+  box-shadow: 0px 4px 3px #8d8d8d;
+}
+
+.header-absolute-style {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin: 5px;
+  padding: 10px;
+}
+
+.header-Title-Text {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 0px 3px 3px #8d8d8d;
+}
+
+.header-Search-icon {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffaf52;
+  border-radius: 100%;
+}
+
+.header-change-Search-Keywork {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  // overflow-x: scroll;
+}
+
+.CarouselCard-Swiper {
+  background-color: #ffffff;
+  width: 100%;
+  overflow: hidden;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-header-text {
+  background-color: #4d0000;
+  color: #fff;
+  padding: 3px 20px;
+  z-index: 2;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.body-bg {
+  top: 180px;
+  width: 100%;
+  height: 70%;
+  background-color: #ffffff;
+}
+
+.footer-conetent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+}
+
+.footer-body {
+  width: 80%;
+  height: 45px;
+  background-color: #60d996;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 20px;
+  padding: 0px 20px;
+  font-size: 30px;
+}
+
+.footer-body-btn-click {
+  padding: 5px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+
+  .btn-icon {
+    font-size: 20px;
+    color: #60d996;
+  }
+}
+
+.footer-body-btn {
+  padding: 5px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .btn-icon {
+    font-size: 20px;
+    color: #010101;
+    font-weight: bolder;
+  }
+}
+
+.footer-body-addbtn {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #ffffff;
+  .btn-icon {
+    font-size: 20px;
+    color: #60d996;
+    font-weight: bolder;
+  }
+}

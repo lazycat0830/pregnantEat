@@ -172,7 +172,11 @@
         <q-btn flat round dense icon="close" v-close-popup />
       </q-toolbar>
 
-      <q-card-section> 已發送驗證碼，請到信箱確認，謝謝! </q-card-section>
+      <q-card-section>
+        <a href="/SetRoles"
+          >已發送驗證碼，請到信箱確認，謝謝!
+        </a></q-card-section
+      >
     </q-card>
   </q-dialog>
 </template>

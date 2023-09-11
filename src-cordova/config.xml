@@ -8,6 +8,6 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+   <allow-intent href="http://localhost:9000/" />
     <allow-navigation href="about:*" />
-    <allow-intent href="http://localhost:9000" />
 </widget>
