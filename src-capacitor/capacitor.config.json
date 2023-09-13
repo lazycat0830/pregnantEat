@@ -1,0 +1,9 @@
+{
+  "appId": "com.example.pregnantEat",
+  "appName": "pregnantEat",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "url": "http://172.20.10.4:9500"
+  }
+}
