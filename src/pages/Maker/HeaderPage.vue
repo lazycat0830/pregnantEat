@@ -17,20 +17,25 @@
     {{food.value}}
       </q-chip>
       
-      <q-btn>查看食譜</q-btn>
+      <q-btn @click="dialog=!dialog">查看食譜</q-btn>
 </div>
             </div>
         </div>
       </q-card-section>
     </q-card>
     </div>
-
+<q-dialog v-model="dialog">
+    <q-card></q-card>
+</q-dialog>
 </template>
 <script>
     import {ref} form "vue";
+    
+    const dialog=ref(false);
     
     const AllData=ref([]);
     AllData.value=[
         {Title:"標題1",foodList:["食材1","食材2","食材3","食材4","食材5","食材6"]}
         ]
+    const 
 </script>
