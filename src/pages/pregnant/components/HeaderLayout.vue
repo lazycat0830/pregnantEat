@@ -19,13 +19,13 @@
         padding: 10px;
       "
     >
-      <q-icon
+      <!-- <q-icon
         style="font-size: 40px"
         class="cursor-pointer"
         @click="toggleNav"
         name="menu"
       >
-      </q-icon>
+      </q-icon> -->
     </div>
     <div
       style="

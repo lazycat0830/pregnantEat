@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">pregnantEat</string>
-    <string name="title_activity_main">pregnantEat</string>
-    <string name="package_name">com.example.pregnantEat</string>
-    <string name="custom_url_scheme">com.example.pregnantEat</string>
-</resources>

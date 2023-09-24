@@ -34,10 +34,10 @@
         </div>
       </div>
       <div class="absolute row justify-center" style="top: 163px; width: 100%">
-        <span v-if="changeShow === 'home'" class="body-header-text"
-          >推薦食譜</span
+        <span v-if="changeShow === 'history'" class="body-header-text"
+          >歷史紀錄</span
         >
-        <span v-else class="body-header-text">歷史紀錄</span>
+        <span v-else class="body-header-text">熱門食譜</span>
       </div>
     </div>
     <div class="absolute body-bg">
@@ -45,8 +45,8 @@
         v-if="changeShow === 'history'"
         style="
           margin-top: 20px;
-          max-height: 380px;
 
+          height: 90%;
           overflow: hidden;
           overflow-y: scroll;
         "

@@ -42,8 +42,13 @@
       </q-card-section>
 
       <q-card-actions align="right">
-        <q-btn flat color="primary" style="font-size: 18px" label="再次下單" />
-        <q-btn flat color="secondary" style="font-size: 18px" label="檢舉" />
+        <!-- <q-btn flat color="primary" style="font-size: 18px" label="再次下單" /> -->
+        <q-btn
+          flat
+          color="secondary"
+          style="font-size: 18px"
+          label="再次生成"
+        />
       </q-card-actions>
     </q-card>
   </div>

@@ -8,6 +8,18 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <allow-intent href="http://localhost:9000/" />
+    <allow-intent href="http://localhost:9000" />
+    <allow-intent href="http://localhost:9400" />
+    <allow-navigation href="http://192.168.0.101:9400" />
     <allow-navigation href="about:*" />
+
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/images/ldpi.png" desity="ldpi" />
+        <icon src="res/images/mdpi.png" desity="mdpi" />
+        <icon src="res/images/hdpi.png" desity="hdpi" />
+        <icon src="res/images/xhdpi.png" desity="xhdpi" />
+        <icon src="res/images/xxhdpi.png" desity="xxhdpi" />
+        <icon src="res/images/xxxhdpi.png" desity="xxxhdpi" />
+</platform>
 </widget>

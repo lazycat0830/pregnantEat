@@ -3,7 +3,12 @@
     <!-- 上方導覽列 -->
 
     <!-- 左側導覽列 -->
-    <q-drawer v-model="leftDrawerOpen" :width="200" :breakpoint="400">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      :width="200"
+      :breakpoint="400"
+      :behavior="leftBehavior"
+    >
       <q-scroll-area
         style="
           height: calc(100% - 180px);
@@ -67,6 +72,8 @@ const leftDrawerOpen = ref(false);
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };
+
+const leftBehavior = ref("mobile");
 
 const navItem = ref(PregnantNav);
 

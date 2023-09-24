@@ -41,16 +41,26 @@
                 @click="Login()"
                 rounded
                 dense
-                color="orange-14"
-                style="width: 100%; margin: 5px 0px; padding: 5px 0px"
+                style="
+                  width: 100%;
+                  margin: 5px 0px;
+                  padding: 5px 0px;
+                  color: #9e1d00;
+                  background-color: #fadede;
+                "
                 >登入</q-btn
               >
               <q-btn
                 to="/RegisterPage"
                 rounded
                 dense
-                color="teal-14"
-                style="width: 100%; margin: 5px 0px; padding: 5px 0px"
+                style="
+                  width: 100%;
+                  margin: 5px 0px;
+                  padding: 5px 0px;
+                  color: #9e1d00;
+                  background-color: #f4e9d3;
+                "
                 >註冊</q-btn
               >
             </div>
